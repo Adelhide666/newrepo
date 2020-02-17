@@ -1,0 +1,17 @@
+*{
+    margin:23 ;
+    padding: 23;
+}
+h1{
+    color: darkorange;
+}
+h2{
+    color: darkslategray;
+}
+h2{
+    background: lightcoral;
+}
+img{
+    width: 370px;
+    height: 200px;
+}
