@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    font-family: sans-serif;
+}
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+.flexbox {
+    display: flex;
+    margin-bottom: 1em;
+    border: 2px solid rgb(160, 67, 67);
+}
+
+.box {
+    width: 20%;
+    border: 2px solid rgb(78, 27, 27);
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.center {
+    justify-content: center;
+}
+
+.right {
+    justify-content: flex-end;
+}
+.space-around {
+    justify-content: space-around;
+}
