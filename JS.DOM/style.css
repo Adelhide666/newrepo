@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    width: 85%;
+    margin: 16px auto;
+    padding: 16px;
+    border: 1px solid rgb(29, 27, 160);
+    background-color: rgb(35, 32, 44);
+    color: rgb(158, 185, 235);
+    text-align: center;
+}
+
