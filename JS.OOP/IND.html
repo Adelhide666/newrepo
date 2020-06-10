@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <title>JS.OOP</title>
+</head>
+<body>
+    <div class="user"><h2> Меркулова Тамара Вікторівна</h2></div>
+    <div class="block">
+        <div class="img" id="img">
+            <img src="http://www.cyber.kharkov.ua/contentimages/photos/merkulova.jpg" width="220" height="300">
+        </div>
+        <div class="mean">
+            <div class="block_1" id="a"><b>Посада: </b></div>
+            <div class="block_1" id="b"><b>Вчене звання, науковий ступінь: </b></div>
+            <div class="block_1" id="c"><b>Викладає дисципліни: </b></div>
+            <div class="block_1" id="d"><b>Освіта: </b></div>
+            <div class="block_1" id="e"><b>Наукові інтереси: </b></div>
+            <div class="block_1" id="f"><b>Персональні профілі: </b></div>
+            <div class="block_1" id="g"><b>E-mail: </b></div>
+        </div>
+    </div>
+    <script>
+        class prepodav{
+            a = "Завідувач кафедри";
+            b = "Професор, доктор економічних наук";
+            c = "1. Моделювання економіки. 2. Податки та податкова політика. 3.Моделі економічної динаміки. 4. Економічний ризик та методи його вимірювання.5. Підготовка наукових публікацій та презентація результатів досліджень";
+            d = "Новосибірський державний університет, 1978,спеціальність - економічна кібернетика";
+            e = "поведінкова та експериментальна економіка, інституціональна економіка, оподаткування, нерівність та економічне зростання";
+            f = "SCOPUS, ORCID,Google Scholar,ResearchGate";
+            g = "tamara.merkulova@karazin.ua";     
+    }
+    let pr = new prepodav();
+    a.append(pr.a);
+    b.append(pr.b);
+    c.append(pr.c);
+    d.append(pr.d);
+    e.append(pr.e);
+    f.append(pr.f);
+    g.append(pr.g)
+    </script>
+</body>
+</html>
