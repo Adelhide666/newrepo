@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS.JSON</title>
+</head>
+<body>
+    <div class="Privat">
+        <p>Задание 1:</p>
+        <div id="out_1"></div>
+        <button id = "btn_1">bitcoin</button>
+    </div>
+    <div class="Alfabank">
+        <p>Задание 2:</p>
+        <div id="out_2"></div>
+        <button id = "btn_2">RUB/EUR</button>
+    </div>
+</body>
+<script>
+    var private = new XMLHttpRequest(); 
+    btn_1.addEventListener("click",sndFnc);
+    
+    
+    function sndFnc(){ 
+        private.open("GET", "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5");
+        private.onreadystatechange = reqReadyStateChangeUpd_1;        
+        private.send();
+    }
+    
+    
+    function reqReadyStateChangeUpd_1() {
+    if (private.readyState == 4) {    
+        var status = private.status;
+        if (status == 200) { 
+            obj = JSON.parse(private.responseText);
+            let pri = document.createElement("div");
+            pri.innerHTML = obj[3].ccy+" / "+obj[3].base_ccy+" buy:"+obj[3].buy+" sale:"+obj[3].sale;
+            console.log(obj);
+            out_1.append(pri);
+            }   }   }
+     
+     
+      var alfabank= new XMLHttpRequest(); 
+    btn_2.addEventListener("click",sndFnc_2);
+    
+    
+    function sendRequest2(){ 
+	request2.open("GET", "https://developerhub.alfabank.by:8273/partner/1.0.0/public/rates");
+	request2.onreadystatechange = readResponse2;        
+	request2.send();
+}
+
+function readResponse2() {
+	if (request2.readyState == 4) {    
+		var status = request2.status;
+		if (status == 200) { 
+			obj = JSON.parse(request2.responseText);
+			console.log(obj);
+			let res = document.createElement("div");
+			if (obj.result.name === 'Unauthorized') {
+				res.innerHTML = "Error: " + obj.result.name + "<br/> Status code: " + obj.result.status + "<br/> Message:" + obj.result.message + "<br/>P.S.: Copy token form https://gorest.co.in/";
+			} else {
+				res.innerHTML = "Id: " + obj.result[0].id + " <br/>Album id: " + obj.result[0].album_id + "<br/>Title: " + obj.result[0].title + "<br/> Url:" + obj.result[0].url;
+			}
+			document.getElementById('out2').appendChild(res);
+		}
+	}
+}
+</script>
+</html>
